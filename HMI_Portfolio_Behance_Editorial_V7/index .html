@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>设计作品集 | HMI · UX/UI</title>
+<style>
+:root{--bg:#101112;--surface:#171917;--line:#ffffff20;--white:#f2f0ea;--muted:#a6a7a2;--gold:#c6a76a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,"SF Pro Display","PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}
+.container{width:min(1240px,calc(100% - 112px));margin:auto}
+.top{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;background:#101112ed;backdrop-filter:blur(18px);z-index:30}
+.nav{display:flex;justify-content:space-between;align-items:center;width:100%}.logo{font-size:14px;letter-spacing:.14em;font-weight:560}.logo i{display:inline-block;width:22px;height:2px;background:var(--gold);vertical-align:middle;margin-right:13px}.links{display:flex;gap:35px;align-items:center;font-size:12px;color:#c5c4bf}.links a:hover{color:var(--gold)}
+.kicker{font-size:11px;letter-spacing:.19em;color:var(--gold);font-weight:550}
+.hero{min-height:min(800px,calc(100svh - 76px));display:flex;align-items:center;border-bottom:1px solid var(--line);position:relative}.hero-inner{padding:120px 0 128px;display:grid;grid-template-columns:1.18fr .82fr;align-items:end;column-gap:10%}
+.hero h1{font-size:clamp(40px,4.2vw,64px);line-height:1.28;font-weight:420;letter-spacing:-.045em;margin:35px 0 0}.hero h1 em{font-style:normal;color:var(--gold);font-weight:400}
+.hero-description{max-width:390px;padding-bottom:7px}.hero-description .role{font-size:12px;letter-spacing:.14em;color:var(--gold);margin-bottom:22px}.hero-description p{font-size:15px;line-height:2.05;color:#b9bab4;margin:0}.hero-bottom{position:absolute;bottom:38px;left:0;right:0;display:flex;justify-content:space-between;color:#858781;font-size:10px;letter-spacing:.15em}
+.section{padding-top:120px}.section-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px;font-size:11px;color:var(--gold);letter-spacing:.16em}.section-top span:last-child{color:#858781}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;padding:58px 0 90px}.about h2{font-size:clamp(29px,3.1vw,43px);font-weight:430;letter-spacing:-.04em;line-height:1.42;margin:0}.about h2 span{color:var(--gold)}.about-copy{color:#b8b9b4;font-size:15px;line-height:2.1;max-width:600px}.about-copy p{margin:0}.facts{display:flex;gap:40px;margin-top:35px}.fact strong{font-size:27px;font-weight:430;color:var(--white)}.fact small{display:block;margin-top:8px;font-size:11px;color:#858781}
+.work-heading{padding:56px 0 62px;display:flex;align-items:end;justify-content:space-between;gap:25px}.work-heading h2{font-size:clamp(31px,3.3vw,47px);font-weight:440;letter-spacing:-.045em;margin:0;line-height:1.2}.work-heading p{font-size:13px;color:#999b94;margin:0 0 6px}
+.projects{display:flex;flex-direction:column;gap:120px}.project{display:block;position:relative}.project-main{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}.project:nth-child(2) .project-main{direction:rtl}.project:nth-child(2) .project-main>*{direction:ltr}.project:nth-child(3) .project-main{grid-template-columns:1.12fr .88fr}
+.project-visual{aspect-ratio:1.58;background:#1b1c1a;position:relative;overflow:hidden;border:1px solid #ffffff17}.project-visual img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s}.project:hover .project-visual img{transform:scale(1.035)}.project-visual .visual-label{position:absolute;left:24px;top:22px;font-size:10px;letter-spacing:.16em;color:#f1f0e9;background:#101112a9;padding:9px 11px}.project-visual .open{position:absolute;right:22px;bottom:22px;width:44px;height:44px;border:1px solid #ffffff8c;border-radius:50%;display:grid;place-items:center;font-size:20px;background:#10111288}
+.project-info .number{font-size:12px;letter-spacing:.18em;color:var(--gold)}.project-info h3{font-size:clamp(26px,2.5vw,37px);font-weight:450;letter-spacing:-.04em;line-height:1.32;margin:21px 0}.project-info p{font-size:14px;line-height:1.95;color:#a6a7a2;max-width:420px;margin:0 0 24px}.project-info .meta{font-size:11px;letter-spacing:.11em;color:#868981}.project-visual .art{position:absolute;inset:0;display:grid;place-items:center}.art.flyme{background:radial-gradient(circle at 65% 45%,#2e3832,#141b18 70%)}.art.ai{background:radial-gradient(circle at 65% 40%,#38303d,#18151b 75%)}.art .orbit{width:54%;aspect-ratio:1;border:1px solid #b7aa8c6e;border-radius:50%;transform:rotate(-24deg) scaleY(.76);box-shadow:0 0 0 30px #ffffff06,0 0 0 80px #ffffff03}.art .tile{position:absolute;width:32%;aspect-ratio:1.15;border:1px solid #ffffff55;background:linear-gradient(135deg,#ffffff2e,#151715aa);transform:rotate(-17deg)}.art .word{position:absolute;bottom:13%;left:10%;font-size:clamp(23px,3vw,43px);font-weight:380;letter-spacing:-.04em}
+.project-secondary{margin-top:5px;padding:42px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:260px 1fr;gap:45px;align-items:center;opacity:.85}.project-secondary .project-visual{aspect-ratio:1.7}.project-secondary h3{font-size:24px}.project-secondary .project-info p{font-size:13px}
+.expertise{padding-bottom:115px}.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding-top:44px}.expertise-item{border-top:1px solid #5b5c53;padding-top:22px}.expertise-item .num{color:var(--gold);font-size:11px}.expertise-item h3{font-size:16px;font-weight:500;margin:18px 0 11px}.expertise-item p{font-size:12px;line-height:1.8;color:#9fa09a}
+.contact{border-top:1px solid var(--line);padding:90px 0 55px}.contact h2{font-size:clamp(33px,3.5vw,50px);font-weight:420;line-height:1.35;letter-spacing:-.045em;margin:30px 0 45px}.contact h2 span{color:var(--gold)}.contact a{font-size:15px;color:#c7c8c2;border-bottom:1px solid #777;padding-bottom:8px}.footer{display:flex;justify-content:space-between;margin-top:95px;padding-top:22px;border-top:1px solid var(--line);color:#83857f;font-size:11px}
+@media(max-width:900px){.container{width:calc(100% - 64px)}.hero-inner{grid-template-columns:1fr;gap:40px}.hero{min-height:650px}.hero-description{max-width:600px}.project-main,.project:nth-child(3) .project-main{grid-template-columns:1fr;gap:24px}.project:nth-child(2) .project-main{direction:ltr}.projects{gap:80px}.project-visual{aspect-ratio:1.8}.project-info h3{margin:12px 0}.about{gap:35px}.expertise-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.container{width:calc(100% - 40px)}.top{height:64px}.links{gap:16px;font-size:11px}.links a:nth-child(3){display:none}.hero{min-height:680px}.hero-inner{padding:90px 0 110px}.hero h1{font-size:clamp(36px,9vw,48px)}.hero-description p{font-size:14px}.section{padding-top:85px}.about{grid-template-columns:1fr;padding:38px 0 60px}.facts{gap:22px;flex-wrap:wrap}.work-heading{display:block;padding:36px 0 42px}.work-heading p{margin-top:14px}.projects{gap:65px}.project-visual{aspect-ratio:1.3}.project-info h3{font-size:27px}.project-secondary{grid-template-columns:1fr;gap:15px}.project-secondary .project-visual{aspect-ratio:2.2}.expertise-grid{gap:20px}.contact{padding-top:70px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-visual img{transition:none}}
+
+/* V8 — restrained editorial layout and section-by-section project browsing */
+:root{--bg:#101112;--surface:#171917;--line:#ffffff20;--white:#f2f0ea;--muted:#a6a7a2;--gold:#c6a76a}
+html{scroll-padding-top:88px;scroll-snap-type:y proximity}
+body{overflow-x:hidden}
+.container{width:min(1180px,calc(100% - 112px))}
+.hero{min-height:clamp(540px,78svh,760px)}
+.hero-inner{grid-template-columns:1.05fr .95fr;column-gap:12%;padding:105px 0 116px}
+.hero h1{font-size:clamp(36px,3.6vw,54px);line-height:1.42;letter-spacing:-.04em;margin-top:30px}
+.hero-description{max-width:355px}
+.hero-description p{font-size:14px;line-height:2.05}
+.section{padding-top:104px}
+.about{padding:52px 0 76px}
+.about h2{font-size:clamp(28px,2.7vw,38px)}
+.about-copy{font-size:14px;line-height:2.05}
+.work-heading{padding:48px 0 30px}
+.work-heading h2{font-size:clamp(30px,2.9vw,40px)}
+.projects{gap:0}
+.project:not(.project-secondary){scroll-snap-align:start;scroll-margin-top:76px;min-height:min(790px,calc(100svh - 76px));display:flex;align-items:center;padding:66px 0;border-top:1px solid #ffffff12}
+.project:first-child{border-top:0}
+.project-main{width:100%;grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);gap:clamp(36px,5vw,86px)}
+.project:nth-child(2) .project-main{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr)}
+.project:nth-child(3) .project-main{grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr)}
+.project-visual{aspect-ratio:1.52;border-radius:3px}
+.project-visual img{object-position:center}
+.project-info h3{font-size:clamp(25px,2.4vw,34px);line-height:1.48;font-weight:440;margin:18px 0}
+.project-info p{font-size:14px;line-height:2.0;margin-bottom:27px}
+.project-info .meta{line-height:1.8}
+.project-visual .visual-label{top:18px;left:18px;padding:8px 10px;font-size:9px}
+.project-visual .open{right:20px;bottom:20px;width:42px;height:42px}
+.project-secondary{margin-top:18px;padding:36px 0 70px;opacity:.76}
+.project-secondary .project-visual{aspect-ratio:1.85}
+.project-secondary h3{font-size:23px}
+.project:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+@media(max-width:900px){
+ html{scroll-snap-type:none}
+ .container{width:calc(100% - 64px)}
+ .hero-inner{grid-template-columns:1fr;gap:36px}
+ .project:not(.project-secondary){min-height:auto;padding:52px 0}
+ .project-main,.project:nth-child(2) .project-main,.project:nth-child(3) .project-main{grid-template-columns:1fr;gap:25px}
+ .project:nth-child(2) .project-main{direction:ltr}
+ .project-visual{aspect-ratio:1.7}
+}
+@media(max-width:600px){
+ .container{width:calc(100% - 40px)}
+ .hero{min-height:590px}
+ .hero-inner{padding:82px 0 110px}
+ .hero h1{font-size:clamp(34px,8.6vw,43px)}
+ .section{padding-top:78px}
+ .work-heading{padding:35px 0 20px}
+ .project:not(.project-secondary){padding:38px 0 46px}
+ .project-visual{aspect-ratio:1.38}
+ .project-info h3{font-size:26px}
+ .project-secondary{padding:32px 0 55px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
+
+/* V8.1 — Consolidated introduction; less visual segmentation */
+.hero{min-height:clamp(560px,78svh,780px);border-bottom:0}
+.hero-inner{padding:115px 0 130px;grid-template-columns:1.08fr .92fr;align-items:center;column-gap:12%}
+.hero h1{font-size:clamp(38px,4vw,60px);line-height:1.34;margin-top:28px}
+.hero-description{max-width:490px;padding:0}
+.hero-description .role{margin-bottom:20px}
+.hero-description p{font-size:14px;line-height:2.05}
+.hero-facts{display:flex;gap:38px;margin-top:34px}
+.hero-fact strong{display:block;font-size:21px;font-weight:430;letter-spacing:-.02em}
+.hero-fact small{display:block;margin-top:7px;font-size:10px;color:#92938d;letter-spacing:.03em}
+.hero-bottom{bottom:42px}
+#work{padding-top:28px}
+#work .section-top{border-bottom:0;padding-bottom:0}
+#work .work-heading{padding-top:26px}
+@media(max-width:900px){
+  .hero{min-height:650px}
+  .hero-inner{grid-template-columns:1fr;gap:35px;padding:92px 0 115px}
+  .hero-description{max-width:620px}
+  #work{padding-top:22px}
+}
+@media(max-width:600px){
+  .hero{min-height:610px}
+  .hero-inner{padding:72px 0 120px}
+  .hero-facts{gap:26px;flex-wrap:wrap;margin-top:24px}
+  .hero-fact strong{font-size:19px}
+  .hero-description p{font-size:13px}
+  .hero-bottom{bottom:28px}
+}
+
+/* V8.2 — Scroll-following stacked project cards */
+html{scroll-snap-type:none!important}
+#work{overflow:visible}
+#work .projects{display:block;position:relative;padding-bottom:10vh}
+#work .project{position:sticky!important;display:block!important;top:calc(86px + var(--stack-index)*18px)!important;z-index:calc(10 + var(--stack-index));height:clamp(470px,72svh,690px)!important;min-height:0!important;margin:0 0 23svh!important;padding:0!important;background:#161819;border:1px solid #ffffff25!important;border-radius:19px;overflow:hidden;box-shadow:0 22px 55px #0009;transition:box-shadow .2s ease}
+#work .project:nth-child(1){--stack-index:0;background:#171816}
+#work .project:nth-child(2){--stack-index:1;background:#171e1b}
+#work .project:nth-child(3){--stack-index:2;background:#1c1920}
+#work .project:nth-child(4){--stack-index:3;background:#18191a}
+#work .project-main{height:100%;width:100%;display:grid;grid-template-columns:minmax(0,1.34fr) minmax(280px,.66fr)!important;gap:0!important;direction:ltr!important}
+#work .project-main>*{direction:ltr!important}
+#work .project-visual{height:100%;width:100%;aspect-ratio:auto!important;border:0;border-radius:0!important;overflow:hidden}
+#work .project-visual img{height:100%;width:100%;object-fit:cover}
+#work .project-info{align-self:center;padding:clamp(28px,4.5vw,68px);max-width:none}
+#work .project-info h3{font-size:clamp(25px,2.3vw,34px);font-weight:450;line-height:1.42}
+#work .project-info p{font-size:14px;line-height:1.9}
+#work .project-secondary{width:83%;margin-left:auto!important;margin-right:auto!important;height:clamp(350px,58svh,520px)!important;opacity:1;display:grid!important;grid-template-columns:1.15fr .85fr!important;align-items:stretch;gap:0!important}
+#work .project-secondary .project-info{align-self:center}
+#work .project-secondary .project-info h3{font-size:clamp(23px,2vw,29px)}
+#work .project-secondary .project-visual{height:100%;aspect-ratio:auto!important}
+#work .project-secondary .project-visual .art{height:100%}
+#work .project:last-child{margin-bottom:4vh!important}
+@media(max-width:900px){
+ #work .project{height:clamp(440px,67svh,620px)!important;margin-bottom:18svh!important}
+ #work .project-main{grid-template-columns:1fr!important;grid-template-rows:minmax(0,1.2fr) minmax(0,.8fr)!important}
+ #work .project-visual{min-height:0}
+ #work .project-info{padding:24px 32px}
+ #work .project-info h3{font-size:clamp(23px,3.6vw,30px);margin:8px 0}
+ #work .project-info p{font-size:12px;margin-bottom:10px}
+ #work .project-secondary{width:90%;grid-template-columns:1fr!important;grid-template-rows:1fr 1fr!important}
+}
+@media(max-width:600px){
+ #work .project{top:calc(70px + var(--stack-index)*12px)!important;height:min(70svh,590px)!important;min-height:430px!important;margin-bottom:16svh!important;border-radius:12px}
+ #work .project-info{padding:20px 23px}
+ #work .project-info h3{font-size:23px}
+ #work .project-info .meta{display:none}
+ #work .project-secondary{width:93%;height:410px!important;min-height:0!important}
+}
+
+/* V8.3: consistent stacked-card entry for all four works */
+@media(min-width:901px){
+  html{scroll-snap-type:none!important}
+  #work .projects{display:block;position:relative;isolation:isolate;padding-bottom:110px}
+  #work .projects>.project{position:sticky!important;top:88px!important;min-height:calc(100svh - 108px)!important;box-sizing:border-box;display:flex!important;align-items:center!important;margin:0!important;padding:28px 22px!important;border:1px solid #ffffff24!important;border-radius:14px!important;background:#151617!important;box-shadow:0 -10px 35px #00000050,0 15px 55px #00000065;opacity:1!important;overflow:hidden}
+  #work .projects>.project:nth-child(1){z-index:1;background:#191a19!important}
+  #work .projects>.project:nth-child(2){z-index:2;background:#161d1b!important}
+  #work .projects>.project:nth-child(3){z-index:3;background:#1b1920!important}
+  #work .projects>.project:nth-child(4){z-index:4;background:#191a1b!important;width:86%!important;margin-left:auto!important;margin-right:auto!important;min-height:calc(84svh - 88px)!important;max-height:720px;}
+  #work .projects>.project .project-main{width:100%}
+  #work .projects>.project:nth-child(4) .project-main{display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;gap:clamp(28px,4vw,60px)!important;align-items:center!important}
+  #work .projects>.project:nth-child(4) .project-visual{aspect-ratio:1.52!important}
+  #work .projects>.project:nth-child(4) .project-info h3{font-size:clamp(24px,2.4vw,32px)!important}
+  #work .projects>.project:nth-child(4) .project-info p{font-size:14px!important}
+}
+@media(max-width:900px){
+  #work .projects>.project{position:relative!important;opacity:1!important;margin-top:0!important}
+  #work .projects>.project:nth-child(4){width:90%;margin:0 auto;padding:36px 0!important;border-top:1px solid #ffffff20}
+}
+
+/* V8.4: restrained contact typography consistent with editorial homepage */
+.contact h2{font-size:clamp(27px,2.55vw,38px);font-weight:420;line-height:1.5;letter-spacing:-.035em;margin:22px 0 34px;max-width:800px}
+.contact{padding-top:76px}
+@media(max-width:600px){.contact h2{font-size:clamp(25px,6.6vw,32px);line-height:1.48}.contact{padding-top:58px}}
+</style></head><body>
+<header class="top"><nav class="container nav"><a class="logo" href="index.html"><i></i>PORTFOLIO</a><div class="links"><a href="#about">关于</a><a href="#work">项目</a><a href="#expertise">专业能力</a><a href="#contact">联系</a></div></nav></header>
+<section class="hero" id="about"><div class="container hero-inner"><div class="hero-lead"><div class="kicker">HMI / UX / UI  ·  PORTFOLIO 2026</div><h1>以设计连接<br/><em>系统与体验。</em></h1></div><div class="hero-description"><div class="role">SENIOR HMI / UX / UI DESIGNER</div><p>12 年 HMI / UX / UI 设计经验，专注智能座舱体验、设计系统与跨车型延展。从组件规范、界面设计到协作交付，兼顾交互逻辑、视觉品质与落地一致性，并持续探索 AI 数字产品体验。</p><div class="hero-facts"><div class="hero-fact"><strong>12+</strong><small>年设计经验</small></div><div class="hero-fact"><strong>HMI</strong><small>智能座舱</small></div><div class="hero-fact"><strong>UX/UI</strong><small>跨端体验</small></div></div></div></div><div class="container hero-bottom"><span>SELECTED WORKS / 2026</span><span>向下探索 ↓</span></div></section>
+<main class="container">
+<section class="section" id="work"><div class="section-top"><span>01 / 精选项目</span><span>03 FEATURED + 01 EXPERIMENT</span></div><div class="work-heading"><h2>精选项目</h2><p>以系统思维，解决真实体验问题。</p></div><div class="projects">
+<a class="project" href="335eu.html"><div class="project-main"><div class="project-visual"><img alt="335EU 海外座舱 HMI 优化方案封面" src="hero-approved.png"/><span class="visual-label">01 / AUTOMOTIVE HMI</span><span class="open">↗</span></div><div class="project-info"><span class="number">FEATURED PROJECT — 01</span><h3>335EU 海外座舱体验优化</h3><p>围绕海外座舱的视觉语言、组件体系、信息层级与交互体验展开系统性优化。保密重建展示，方案未量产。</p><span class="meta">HMI · UX/UI · MOTION · DESIGN TOKEN</span></div></div></a>
+<a class="project" href="flyme.html"><div class="project-main"><div class="project-visual"><div class="art flyme"><div class="orbit"></div><div class="tile"></div><div class="word">设计，始于体系。</div></div><span class="visual-label">02 / DESIGN SYSTEM</span><span class="open">↗</span></div><div class="project-info"><span class="number">FEATURED PROJECT — 02</span><h3>Flyme Auto 多车型设计体系</h3><p>统一框架下的组件库建设、Design Token 管理与跨车型延展，重点呈现设计协作、质量把控和交付方法。</p><span class="meta">DESIGN SYSTEM · COMPONENTS · DELIVERY</span></div></div></a>
+<a class="project" href="zhixu.html"><div class="project-main"><div class="project-visual"><div class="art ai"><div class="orbit"></div><div class="tile"></div><div class="word">让智能融入工作。</div></div><span class="visual-label">03 / AI PRODUCT</span><span class="open">↗</span></div><div class="project-info"><span class="number">FEATURED PROJECT — 03</span><h3>智序 AI 智能业务工作台</h3><p>面向复杂业务协作的 AI 产品概念，覆盖信息架构、Web 管理后台、移动端体验和业务流程设计。</p><span class="meta">PRODUCT STRATEGY · UX · WEB / MOBILE</span></div></div></a>
+<a class="project project-secondary" href="skills.html"><div class="project-visual"><div class="art flyme"><div class="orbit"></div><div class="tile"></div></div><span class="visual-label">04 / OTHER WORKS</span></div><div class="project-info"><span class="number">CREATIVE EXPLORATION — 04</span><h3>其他视觉探索</h3><p>3D · 人物三视图 · 营销页面 · 插画</p><span class="meta">MOTION · 3D · VISUAL</span></div></a>
+</div></section>
+<section class="section expertise" id="expertise"><div class="section-top"><span>02 / 专业能力</span><span>EXPERTISE</span></div><div class="expertise-grid"><div class="expertise-item"><span class="num">01</span><h3>汽车 HMI</h3><p>座舱体验、跨屏设计、信息层级与安全场景。</p></div><div class="expertise-item"><span class="num">02</span><h3>设计系统</h3><p>组件库、Design Token、状态规范与跨车型复用。</p></div><div class="expertise-item"><span class="num">03</span><h3>UX / UI</h3><p>信息架构、业务流程、界面设计与多端适配。</p></div><div class="expertise-item"><span class="num">04</span><h3>动效与交付</h3><p>交互 Demo、设计评审、动效与质量闭环。</p></div></div></section></main>
+<footer class="contact" id="contact"><div class="container"><div class="kicker">04 / CONTACT</div><h2>期待交流，<br/><span>让设计创造更多可能。</span></h2><a href="mailto:573277106@qq.com">573277106@qq.com ↗</a><div class="footer"><span>PORTFOLIO · 2026</span><span>HMI / UX / UI / DESIGN SYSTEM</span></div></div></footer>
+</body></html>
