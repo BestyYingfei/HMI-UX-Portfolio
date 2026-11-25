@@ -92,6 +92,88 @@
 @media(max-width:600px){.hero{min-height:0}.hero-inner{grid-template-columns:1fr;padding:58px 0 98px;gap:10px}.hero-kicker{gap:12px}.hero-edition{font-size:9px}.hero h1{font-size:clamp(48px,12vw,64px);margin:38px 0 26px}.hero-statement{gap:14px}.hero-statement p{font-size:13px}.hero-art{min-height:340px;margin-top:14px}.art-stage{width:94%;margin:12px auto}.art-index{right:2%;bottom:12%;font-size:82px}.hero-side-note{font-size:8px;gap:10px}.hero-bottom{bottom:20px}.hero-atmosphere .glow{width:75vw;height:75vw;filter:blur(65px)}.hero-grid{background-size:56px 56px}}
 @media(prefers-reduced-motion:reduce){.hero-atmosphere .glow,.art-halo,.art-core,.art-ribbon{animation:none!important}}
 
+
+/* Softer art direction — warm, fluid, feminine without cliché */
+:root{--gold:#c9ad86;--white:#f3eee9;--muted:#b4aaa6}
+.hero{background:#100f11}
+.hero-atmosphere{
+ background:
+ radial-gradient(ellipse at 77% 42%,#5a354a35 0%,transparent 42%),
+ radial-gradient(ellipse at 38% 85%,#6a4c4830 0%,transparent 38%),
+ linear-gradient(118deg,#100f11 0%,#151116 54%,#111014 100%);
+}
+.hero-atmosphere .glow{filter:blur(105px);mix-blend-mode:screen;opacity:.22}
+.glow-a{right:5%;top:-20%;background:radial-gradient(circle,#bd8792 0%,#795568 32%,transparent 70%);animation:glowDriftA 30s ease-in-out infinite alternate}
+.glow-b{right:20%;bottom:-42%;background:radial-gradient(circle,#c7a17c 0%,#8a6b6a 28%,transparent 70%);opacity:.2!important;animation:glowDriftB 34s ease-in-out infinite alternate}
+.glow-c{left:34%;top:14%;background:radial-gradient(circle,#9885a9 0%,#65556f 32%,transparent 72%);opacity:.18!important;animation:glowDriftC 37s ease-in-out infinite alternate}
+.hero-grid{opacity:0}
+.hero-orbit{border-color:#d4b8a51a;opacity:.45}
+.orbit-two{border-color:#b99aa91a;opacity:.35}
+.hero h1{font-weight:360;letter-spacing:-.065em}
+.hero h1 em{color:#d2b79c;text-shadow:0 0 38px #c79c9b16}
+.hero-statement{border-color:#d7c4c01f}
+.statement-index{color:#c9ad86}
+.hero-side-note{border-color:#d7c4c018;color:#9c9295}
+.hero-art{min-height:500px}
+.art-topline,.art-bottomline{color:#a89ba0}
+.art-stage{width:min(100%,540px);overflow:visible}
+.art-halo{
+ width:82%;
+ background:
+ radial-gradient(ellipse at 50% 48%,#d6a9b42b 0%,#a98aa51a 35%,#c6a8860c 57%,transparent 72%);
+ filter:blur(20px);
+ animation:haloBreath 13s ease-in-out infinite;
+}
+.art-core{
+ width:48%;height:58%;aspect-ratio:auto;
+ border-radius:58% 42% 57% 43% / 43% 56% 44% 57%;
+ background:
+ radial-gradient(ellipse at 31% 26%,#fff4e6 0%,#e7c9c5 13%,#c9a4b2 29%,#9b829f 47%,#554858 68%,#29232e 100%);
+ box-shadow:inset -18px -24px 48px #211a2c88,inset 12px 10px 28px #fff4e65c,0 28px 90px #0006,0 0 70px #bb91a326;
+ transform:rotate(-28deg);
+ animation:coreFloat 16s ease-in-out infinite;
+}
+.art-core:after{
+ inset:8%;
+ border:1px solid #fff0e47a;
+ border-radius:inherit;
+ filter:blur(.6px);
+}
+.art-ribbon{
+ width:74%;height:30%;
+ border:1px solid transparent;
+ border-top-color:#f1d8ce9c;
+ border-bottom-color:#b99aaa75;
+ border-radius:50%;
+ transform:rotate(-28deg) skewX(-13deg);
+ box-shadow:0 0 25px #d4a9b51c,inset 0 0 24px #d8b4c00d;
+ filter:drop-shadow(0 0 8px #d9b4c51a);
+ animation:ribbonFloat 21s ease-in-out infinite alternate;
+}
+.ribbon-b{width:78%;height:43%;border-top-color:#e7c9c58c;border-bottom-color:#9c829f68;transform:rotate(48deg) skewX(15deg);animation-delay:-7s}
+.ribbon-c{width:58%;height:62%;border-top-color:#f3e0cf75;border-bottom-color:#c5a5b06b;transform:rotate(10deg) skewX(-10deg);animation-delay:-12s}
+.art-crosshair{display:none}
+.art-coordinate{color:#bca9ad;font-size:8px;letter-spacing:.18em}
+.coord-b{color:#c9ad86}
+.art-index{color:#ffffff08;font-weight:400;letter-spacing:-.1em}
+.art-index span{color:#d3b9a51c}
+@keyframes coreFloat{
+ 0%,100%{transform:translate3d(0,0,0) rotate(-28deg) scale(1)}
+ 50%{transform:translate3d(0,-9px,0) rotate(-23deg) scale(1.025)}
+}
+@keyframes ribbonFloat{
+ 0%{translate:-4px 3px;rotate:-2deg}
+ 100%{translate:6px -5px;rotate:3deg}
+}
+@media(max-width:600px){
+ .hero-art{min-height:340px}
+ .art-core{width:48%;height:58%}
+ .hero-atmosphere .glow{filter:blur(80px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-atmosphere .glow,.art-halo,.art-core,.art-ribbon{animation:none!important}
+}
+
 </style></head><body>
 <header class="top"><nav class="container nav"><a href="index.html" class="logo"><i></i>PORTFOLIO</a><div class="links"><a href="#about">关于</a><a href="#work">项目</a><a href="#contact">联系</a></div></nav></header>
 <section class="hero" id="about">
