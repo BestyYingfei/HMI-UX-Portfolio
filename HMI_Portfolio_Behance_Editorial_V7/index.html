@@ -46,9 +46,72 @@
 .project .project-info h3{display:none}
 @media(max-width:600px){.project-head{gap:12px;padding-bottom:14px;margin-bottom:14px}.project-heading{gap:12px}.project-index{font-size:42px}.project-heading-copy>span{font-size:9px}.project-heading-copy h3{font-size:16px}.project-detail{min-width:0;padding:10px 13px;gap:7px;font-size:11px}.project-detail b{font-size:15px}}
 
+
+/* Hero art direction — editorial typography + slow atmospheric motion */
+.hero{min-height:min(790px,calc(100svh - 76px));display:flex;align-items:center;border-bottom:1px solid var(--line);position:relative;isolation:isolate;overflow:hidden;background:#0c0e10}
+.hero-inner{position:relative;z-index:2;padding:84px 0 112px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;column-gap:4%;row-gap:26px}
+.hero-atmosphere{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 72% 48%,#18232b50 0%,transparent 42%),linear-gradient(115deg,#0c0e10 0%,#101113 58%,#0b0d10 100%)}
+.hero-atmosphere .glow{position:absolute;display:block;width:42vw;height:42vw;max-width:700px;max-height:700px;border-radius:50%;filter:blur(85px);opacity:.24;mix-blend-mode:screen;will-change:transform}
+.glow-a{right:7%;top:-22%;background:radial-gradient(circle,#5b7e8d 0%,#31505c 24%,transparent 68%);animation:glowDriftA 24s ease-in-out infinite alternate}
+.glow-b{right:22%;bottom:-46%;background:radial-gradient(circle,#8d6846 0%,#4a3b32 28%,transparent 68%);opacity:.2!important;animation:glowDriftB 29s ease-in-out infinite alternate}
+.glow-c{left:34%;top:14%;width:26vw!important;height:26vw!important;background:radial-gradient(circle,#5b526c 0%,#343142 30%,transparent 70%);opacity:.15!important;animation:glowDriftC 31s ease-in-out infinite alternate}
+.hero-grid{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:84px 84px;mask-image:linear-gradient(90deg,transparent 4%,#000 58%,transparent 100%)}
+.hero-orbit{position:absolute;border:1px solid #c6a76a20;border-radius:50%;width:56vw;height:56vw;right:-6%;top:-30%;transform:rotate(-24deg) scaleY(.56)}
+.orbit-two{width:68vw;height:68vw;right:-12%;top:-40%;border-color:#8daab51a;transform:rotate(22deg) scaleY(.62)}
+.hero-kicker{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero-edition{font-size:10px;letter-spacing:.16em;color:#7d827f}
+.hero h1{font-size:clamp(58px,6.25vw,94px);line-height:1.12;font-weight:420;letter-spacing:-.075em;margin:48px 0 36px;max-width:760px}
+.hero h1 em{font-style:normal;color:#d0b477;font-weight:400;text-shadow:0 0 34px #c6a76a12}
+.hero-statement{display:flex;align-items:flex-start;gap:22px;padding-top:22px;border-top:1px solid #ffffff25;max-width:540px}
+.statement-index{font-size:10px;letter-spacing:.15em;color:var(--gold);padding-top:5px;white-space:nowrap}
+.hero-statement p{font-size:14px;line-height:2;color:#b6b8b6;margin:0}
+.hero-art{position:relative;min-height:500px;display:flex;flex-direction:column;justify-content:space-between;padding:6px 0 4px}
+.art-topline,.art-bottomline{display:flex;justify-content:space-between;gap:16px;font-size:9px;letter-spacing:.16em;color:#8f9695}
+.art-stage{position:relative;width:min(100%,520px);aspect-ratio:1;margin:18px auto;display:grid;place-items:center;isolation:isolate}
+.art-halo{position:absolute;width:76%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#8caeb51b 0%,#6e8b9910 36%,transparent 69%);filter:blur(10px);animation:haloBreath 9s ease-in-out infinite}
+.art-core{position:absolute;width:40%;aspect-ratio:1;border-radius:43% 57% 62% 38% / 44% 42% 58% 56%;background:radial-gradient(ellipse at 32% 28%,#e8e3d4 0%,#aab6b7 12%,#65777e 27%,#29353b 49%,#151a20 70%,#090c10 100%);box-shadow:inset -22px -26px 50px #05070ac9,inset 9px 12px 28px #ffffff36,0 24px 90px #0009;transform:rotate(-23deg);animation:coreFloat 12s ease-in-out infinite}
+.art-core:after{content:"";position:absolute;inset:12%;border:1px solid #e2d5b45c;border-radius:inherit;filter:blur(.3px)}
+.art-ribbon{position:absolute;width:68%;height:32%;border:1px solid #d5c39a88;border-radius:50%;transform:rotate(-32deg) skewX(-18deg);box-shadow:0 0 24px #9fb9c21a,inset 0 0 22px #c6a76a0b;animation:ribbonFloat 16s ease-in-out infinite alternate}
+.ribbon-b{width:78%;height:46%;border-color:#91aab477;transform:rotate(53deg) skewX(22deg);animation-delay:-6s}
+.ribbon-c{width:56%;height:64%;border-color:#ffffff3d;transform:rotate(12deg) skewX(-14deg);animation-delay:-10s}
+.art-crosshair{position:absolute;width:92%;height:1px;background:linear-gradient(90deg,transparent,#ffffff3b,transparent);transform:rotate(-28deg)}
+.crosshair-b{width:1px;height:92%;background:linear-gradient(180deg,transparent,#ffffff30,transparent);transform:rotate(22deg)}
+.art-coordinate{position:absolute;font-size:9px;letter-spacing:.16em;color:#9da5a2}
+.coord-a{top:17%;right:4%}.coord-b{bottom:16%;left:2%;color:var(--gold)}
+.art-index{position:absolute;right:-1%;bottom:13%;font-size:clamp(70px,9vw,128px);line-height:.8;letter-spacing:-.09em;color:#ffffff0b;font-weight:600;pointer-events:none}
+.art-index span{font-size:.42em;color:#c6a76a33;vertical-align:top}
+.hero-side-note{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff19;padding-top:17px;font-size:9px;letter-spacing:.16em;color:#7f8583}
+.hero-bottom{z-index:2;bottom:26px;font-size:10px;letter-spacing:.15em}
+@keyframes glowDriftA{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-8%,7%,0) scale(1.12)}}
+@keyframes glowDriftB{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(12%,-10%,0) scale(1.15)}}
+@keyframes glowDriftC{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(14%,8%,0) scale(1.1)}}
+@keyframes haloBreath{0%,100%{transform:scale(.92);opacity:.65}50%{transform:scale(1.08);opacity:1}}
+@keyframes coreFloat{0%,100%{transform:translate3d(0,0,0) rotate(-23deg)}50%{transform:translate3d(0,-13px,0) rotate(-17deg)}}
+@keyframes ribbonFloat{0%{translate:-5px 4px;rotate:-3deg}100%{translate:8px -7px;rotate:4deg}}
+@media(max-width:900px){.hero{min-height:0}.hero-inner{grid-template-columns:1fr 1fr;gap:20px;padding:68px 0 100px}.hero h1{font-size:clamp(52px,7vw,76px);margin:38px 0 28px}.hero-art{min-height:390px}.hero-side-note{grid-column:1/-1}}
+@media(max-width:600px){.hero{min-height:0}.hero-inner{grid-template-columns:1fr;padding:58px 0 98px;gap:10px}.hero-kicker{gap:12px}.hero-edition{font-size:9px}.hero h1{font-size:clamp(48px,12vw,64px);margin:38px 0 26px}.hero-statement{gap:14px}.hero-statement p{font-size:13px}.hero-art{min-height:340px;margin-top:14px}.art-stage{width:94%;margin:12px auto}.art-index{right:2%;bottom:12%;font-size:82px}.hero-side-note{font-size:8px;gap:10px}.hero-bottom{bottom:20px}.hero-atmosphere .glow{width:75vw;height:75vw;filter:blur(65px)}.hero-grid{background-size:56px 56px}}
+@media(prefers-reduced-motion:reduce){.hero-atmosphere .glow,.art-halo,.art-core,.art-ribbon{animation:none!important}}
+
 </style></head><body>
 <header class="top"><nav class="container nav"><a href="index.html" class="logo"><i></i>PORTFOLIO</a><div class="links"><a href="#about">关于</a><a href="#work">项目</a><a href="#contact">联系</a></div></nav></header>
-<section class="hero" id="about"><div class="container hero-inner"><div><div class="kicker">HMI / UX / UI · DESIGN PORTFOLIO 2026</div><h1>以设计连接<br><em>系统与体验。</em></h1></div><div class="hero-description"><div class="role">资深 HMI / UX / UI 设计师</div><p>拥有 12 年智能座舱与数字产品设计经验，长期参与汽车 HMI、组件体系建设、多车型框架延展及交付质量管理，覆盖核心模块设计、跨团队协作、设计评审与实车验证，并持续探索 AI 与跨端数字产品体验。</p><div class="facts"><div class="fact"><strong>12+</strong><small>年设计经验</small></div><div class="fact"><strong>HMI</strong><small>核心专业方向</small></div><div class="fact"><strong>跨端</strong><small>数字产品体验</small></div></div></div></div><div class="container hero-bottom"><span>精选作品 / 2026</span><span>向下探索 ↓</span></div></section>
+<section class="hero" id="about">
+<div class="hero-atmosphere" aria-hidden="true"><span class="glow glow-a"></span><span class="glow glow-b"></span><span class="glow glow-c"></span><span class="hero-grid"></span><span class="hero-orbit orbit-one"></span><span class="hero-orbit orbit-two"></span></div>
+<div class="container hero-inner">
+<div class="hero-copy">
+<div class="hero-kicker"><span class="kicker">HMI · 数字产品 · 设计系统</span><span class="hero-edition">个人设计档案 / 2026</span></div>
+<h1>在复杂之中，<br><em>建立秩序。</em></h1>
+<div class="hero-statement"><span class="statement-index">01 — 03</span><p>以系统化设计连接界面、组件与体验。<br>让每一次设计决策，都有清晰的逻辑与表达。</p></div>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="art-topline"><span>FORM / FUNCTION / FEELING</span><span>DESIGN STUDY 001</span></div>
+<div class="art-stage"><div class="art-halo"></div><div class="art-core"></div><div class="art-ribbon ribbon-a"></div><div class="art-ribbon ribbon-b"></div><div class="art-ribbon ribbon-c"></div><div class="art-crosshair crosshair-a"></div><div class="art-crosshair crosshair-b"></div><span class="art-coordinate coord-a">31° 14' 08"</span><span class="art-coordinate coord-b">HMI / SYSTEM</span></div>
+<div class="art-bottomline"><span>12+ 年设计实践</span><span>从界面到系统</span></div>
+<div class="art-index">12<span>+</span></div>
+</div>
+<div class="hero-side-note"><span>DESIGNER / HMI</span><span>跨车型 · 组件体系 · 交付质量</span></div>
+</div>
+<div class="container hero-bottom"><span>精选作品 / 2026</span><span>向下探索 ↓</span></div>
+</section>
 <main class="container">
 <section class="section work-section" id="work"><div class="work-heading"><h2>精选项目</h2><p>以系统思维，解决真实体验问题。</p></div><div class="projects">
 <a class="project" href="335eu.html"><div class="project-head"><div class="project-heading"><span class="project-index">01</span><div class="project-heading-copy"><span>项目方向 · 海外座舱</span><h3>335EU 海外座舱体验优化</h3></div></div><span class="project-detail">查看详情 <b>↗</b></span></div><div class="project-main"><div class="project-visual"><img src="hero-approved.png" alt="335EU 海外座舱界面设计展示"><span class="visual-label">01 / 海外座舱</span></div><div class="project-info"><span class="number">核心项目</span><p>围绕海外座舱的视觉语言、组件体系、信息层级与交互体验展开系统性优化。保密重建展示，方案未量产。</p><span class="meta">座舱界面 · 设计规范 · 动效</span></div></div></a>
@@ -58,5 +121,5 @@
 <a class="project project-secondary" href="skills.html"><div class="project-visual"><div class="art flyme"><div class="orbit"></div><div class="tile"></div></div><span class="visual-label">04 / EXPLORATION</span></div><div class="project-info"><span class="number">CREATIVE EXPLORATION — 04</span><h3>视觉与动效探索</h3><p>插画、3D 与动态视觉实验，作为核心项目之外的补充展示。</p><span class="meta">MOTION · 3D · VISUAL</span></div></a>
 </section>
 </main>
-<footer class="contact" id="contact"><div class="container"><div class="kicker">04 / CONTACT</div><h2>期待交流，<br><span>让设计创造更多可能。</span></h2><a href="mailto:573277106@qq.com">573277106@qq.com ↗</a><div class="footer"><span>PORTFOLIO · 2026</span><span>HMI / UX / UI / DESIGN SYSTEM</span></div></div></footer>
+<footer class="contact" id="contact"><div class="container"><div class="kicker">04 / CONTACT</div><h2>期待交流，<br><span>让设计创造更多可能。</span></h2><a href="mailto:573277106@qq.com">573277106@qq.com ↗</a><div class="footer"><span>PORTFOLIO · 2026</span><span>HMI / UI / DESIGN SYSTEM</span></div></div></footer>
 </body></html>
